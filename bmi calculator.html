@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator</title>
+
+</head>
+
+<body>
+<center><div class="box">
+    <h1>BMI Calculator</h1>
+    <h2 id="welcome-heading"> Welcome <span id="user">User</span></h2>
+
+
+       <p> Enter your weight in kg:
+        <input type="number" id="weight">
+        </p>
+        <br>
+
+       <p> Enter your height in m2:
+        <input type="number" id="height">
+        </p>
+         <br>
+        <button id="submit-btn">Calculate</button>
+
+
+    <p> Calculated BMI:<span id="output"></span> </p>
+    </div>
+
+    <style>
+        body {
+			background-color: yellow;
+			font-family: 'Trebuchet MS';
+		}
+        .box{
+            width: 300px;
+			height: 450px;
+			background-color: black;
+            position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			border-radius: 50px;
+			color: white;
+            display: inline;
+        }
+        #submit-btn{
+            background-color: rgb(153, 235, 21);
+            border-radius: 0.5em;
+        }
+        #output{
+          color: rgba(202, 212, 245, 0.938);
+        }
+        input {
+			padding: 7px;
+			width: 70%;
+			margin-top: 7px;
+		}
+    </style>
+
+<script>
+    const user = document.querySelector("#user");
+    const weight_input = document.querySelector("#weight");
+    const height_input = document.querySelector("#height");
+    const btnSubmit = document.getElementById("submit-btn");
+    const output = document.getElementById("output");
+
+    btnSubmit.addEventListener("click", clickHandler);      
+    function clickHandler() {            
+        let weight =  parseFloat(weight_input.value);
+        let height =  parseFloat(height_input.value);
+        let bmi = weight/height;
+        output.innerHTML = bmi;
+    };
+
+</script>
+</body>
+
+</html>
